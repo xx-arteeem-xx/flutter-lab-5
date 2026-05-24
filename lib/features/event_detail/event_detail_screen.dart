@@ -81,9 +81,10 @@ class _EventDetailContent extends StatelessWidget {
         ),
       );
       if (confirmed == true && context.mounted) {
+        // Store messenger before deleting — ValueListenableBuilder auto-pops
+        // when event becomes null; manual pop would cause a double-pop.
         final messenger = ScaffoldMessenger.of(context);
         eventsNotifier.deleteEvent(event.id);
-        Navigator.of(context).pop();
         messenger.showSnackBar(
           SnackBar(
             content: const Text(AppStrings.eventDeleted),
