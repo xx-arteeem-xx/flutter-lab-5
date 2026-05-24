@@ -53,6 +53,8 @@ class AppStrings {
   static const String noDescription = 'Описание не указано';
   static const String noParticipants = 'Участники не указаны';
   static const String noLocation = 'Место не указано';
+  static const String deleteEvent = 'Удалить';
+  static const String deleteEventDialogTitle = 'Удалить событие?';
 
   // ── Snackbar ─────────────────────────────────────────────────────────────
   static const String eventDeleted = 'Событие удалено';

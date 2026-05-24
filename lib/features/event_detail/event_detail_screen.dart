@@ -59,10 +59,52 @@ class _EventDetailContent extends StatelessWidget {
     final isDark = theme.brightness == Brightness.dark;
     final accent = isDark ? AppColors.accent : AppColors.accentLight;
 
+    Future<void> deleteWithConfirm() async {
+      final confirmed = await showDialog<bool>(
+        context: context,
+        builder: (ctx) => AlertDialog(
+          title: const Text(AppStrings.deleteEventDialogTitle),
+          content: Text('«${event.title}» будет удалено.'),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(ctx).pop(false),
+              child: const Text(AppStrings.cancel),
+            ),
+            TextButton(
+              onPressed: () => Navigator.of(ctx).pop(true),
+              child: Text(
+                AppStrings.deleteEvent,
+                style: TextStyle(color: theme.colorScheme.error),
+              ),
+            ),
+          ],
+        ),
+      );
+      if (confirmed == true && context.mounted) {
+        final messenger = ScaffoldMessenger.of(context);
+        eventsNotifier.deleteEvent(event.id);
+        Navigator.of(context).pop();
+        messenger.showSnackBar(
+          SnackBar(
+            content: const Text(AppStrings.eventDeleted),
+            action: SnackBarAction(
+              label: AppStrings.undo,
+              onPressed: eventsNotifier.undoDelete,
+            ),
+          ),
+        );
+      }
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: Text(event.title, overflow: TextOverflow.ellipsis),
         actions: [
+          IconButton(
+            icon: Icon(Icons.delete_outline_rounded, color: theme.colorScheme.error),
+            tooltip: AppStrings.deleteEvent,
+            onPressed: deleteWithConfirm,
+          ),
           IconButton(
             icon: Icon(Icons.edit_outlined, color: accent),
             tooltip: AppStrings.editEvent,
