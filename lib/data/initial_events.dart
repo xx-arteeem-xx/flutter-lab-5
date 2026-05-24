@@ -1,0 +1,88 @@
+import 'package:flutter/material.dart';
+import '../models/event.dart';
+
+List<Event> get initialEvents {
+  final now = DateTime.now();
+  return [
+    Event(
+      id: '1',
+      title: 'Лекция по Flutter',
+      description: 'Разбираем виджеты, навигацию и управление состоянием в Flutter. Подготовить конспект.',
+      date: now.add(const Duration(days: 1)),
+      time: const TimeOfDay(hour: 10, minute: 0),
+      categoryId: 'study',
+      location: 'ауд. 305, корпус А',
+      participants: ['Преподаватель Иванов', 'Группа ИС-302'],
+    ),
+    Event(
+      id: '2',
+      title: 'Пробежка в парке',
+      description: 'Утренняя пробежка 5 км по набережной. Взять воду и наушники.',
+      date: now,
+      time: const TimeOfDay(hour: 7, minute: 30),
+      categoryId: 'sport',
+      location: 'Центральный парк',
+      participants: ['Алексей', 'Мария'],
+    ),
+    Event(
+      id: '3',
+      title: 'Концерт в клубе',
+      description: 'Живая музыка, джаз-квартет. Билеты уже куплены.',
+      date: now.add(const Duration(days: 7)),
+      time: const TimeOfDay(hour: 20, minute: 0),
+      categoryId: 'fun',
+      location: 'Jazz Club Downtown',
+      participants: ['Дмитрий', 'Анна', 'Ксения'],
+    ),
+    Event(
+      id: '4',
+      title: 'Митинг с командой',
+      description: 'Еженедельная встреча, обсуждение спринта. Подготовить отчёт о задачах.',
+      date: now,
+      time: const TimeOfDay(hour: 14, minute: 0),
+      categoryId: 'work',
+      location: 'Zoom Meeting',
+      participants: ['Руководитель проекта', 'Команда разработки'],
+    ),
+    Event(
+      id: '5',
+      title: 'День рождения друга',
+      description: 'Не забыть подарок! Договорились собраться у него дома.',
+      date: now.add(const Duration(days: 10)),
+      time: const TimeOfDay(hour: 18, minute: 0),
+      categoryId: 'personal',
+      location: 'ул. Ленина 42, кв. 7',
+      participants: ['Виктор', 'Светлана', 'Павел', 'Ольга'],
+    ),
+    Event(
+      id: '6',
+      title: 'Экзамен по матанализу',
+      description: 'Устный экзамен. Повторить билеты 1–40, особенно интегралы и ряды.',
+      date: now.add(const Duration(days: 3)),
+      time: const TimeOfDay(hour: 9, minute: 0),
+      categoryId: 'study',
+      location: 'ауд. 108',
+      participants: ['Преподаватель Петрова'],
+    ),
+    Event(
+      id: '7',
+      title: 'Тренировка по плаванию',
+      description: 'Занятие с тренером. Отработка кроля и брасса.',
+      date: now.add(const Duration(days: 2)),
+      time: const TimeOfDay(hour: 19, minute: 30),
+      categoryId: 'sport',
+      location: 'Бассейн «Олимп»',
+      participants: [],
+    ),
+    Event(
+      id: '8',
+      title: 'Презентация проекта',
+      description: 'Финальная презентация мобильного приложения перед заказчиком. Подготовить демо.',
+      date: now.add(const Duration(days: 5)),
+      time: const TimeOfDay(hour: 11, minute: 0),
+      categoryId: 'work',
+      location: 'Конференц-зал, 2 этаж',
+      participants: ['Заказчик', 'Команда разработки', 'Дизайнер'],
+    ),
+  ];
+}
