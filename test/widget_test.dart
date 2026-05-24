@@ -24,8 +24,10 @@ void main() {
   testWidgets('two tabs present in BottomNavigationBar', (tester) async {
     await buildApp(tester);
     expect(find.byType(BottomNavigationBar), findsOneWidget);
-    expect(find.text('События'), findsOneWidget);
-    expect(find.text('Статистика'), findsOneWidget);
+    // 'События' appears in both AppBar title and BottomNavigationBar label
+    final navBar = find.byType(BottomNavigationBar);
+    expect(find.descendant(of: navBar, matching: find.text('События')), findsOneWidget);
+    expect(find.descendant(of: navBar, matching: find.text('Статистика')), findsOneWidget);
   });
 
   testWidgets('FAB is visible on Events tab', (tester) async {
@@ -69,8 +71,8 @@ void main() {
 
   testWidgets('Events tab shows initial events', (tester) async {
     await buildApp(tester);
-    // At least one initial event title should be visible in the grid
-    expect(find.text('Лекция по Flutter'), findsOneWidget);
+    // Default sort is byDate; first event is 'Пробежка в парке' (today 07:30)
+    expect(find.text('Пробежка в парке'), findsOneWidget);
   });
 
   testWidgets('Statistics tab shows all category names', (tester) async {
