@@ -7,6 +7,15 @@
 
 ## [Unreleased]
 
+### Добавлено
+
+- Удаление события из экрана деталей: иконка корзины (`delete_outline_rounded`) в AppBar рядом с кнопкой редактирования. При нажатии — диалог подтверждения (`AlertDialog`), после подтверждения — событие удаляется, экран закрывается, показывается SnackBar с кнопкой «Отменить» (undo через `EventsNotifier.undoDelete`)
+
+### Исправлено
+
+- Widget-тест `two tabs present in BottomNavigationBar`: текст «События» присутствовал как в AppBar, так и в метке BottomNavigationBar — заменён поиск через `find.descendant`
+- Widget-тест `Events tab shows initial events`: «Лекция по Flutter» оказывалась вне вьюпорта при тестовом разрешении 800×600; заменена на «Пробежка в парке» (первый элемент по сортировке byDate)
+
 ---
 
 ## [1.0.0] — 2026-05-25
