@@ -1,7 +1,7 @@
 # EventHub — Flutter Event Planning App
 
 [![Build & Release APK](https://github.com/xx-arteeem-xx/flutter-lab-5/actions/workflows/release.yml/badge.svg)](https://github.com/xx-arteeem-xx/flutter-lab-5/actions/workflows/release.yml)
-[![Download APK](https://img.shields.io/badge/Download-APK-50C8FF?logo=android)](https://github.com/xx-arteeem-xx/flutter-lab-5/releases/latest/download/app-release.apk)
+[![Download APK](https://img.shields.io/badge/Download-APK-50C8FF?logo=android)](https://github.com/xx-arteeem-xx/flutter-lab-5/releases/latest/download/event-hub.apk)
 [![Flutter](https://img.shields.io/badge/Flutter-3.24-54C5F8?logo=flutter)](https://flutter.dev)
 [![Dart](https://img.shields.io/badge/Dart-3.3+-0175C2?logo=dart)](https://dart.dev)
 [![License](https://img.shields.io/badge/License-Unlicense-green)](LICENSE)
@@ -89,7 +89,7 @@ lib/
 
 ### Скачать APK
 
-[Последний релиз](https://github.com/xx-arteeem-xx/flutter-lab-5/releases/latest/download/app-release.apk) собирается автоматически при каждом пуше в `main`.
+[Последний релиз](https://github.com/xx-arteeem-xx/flutter-lab-5/releases/latest/download/event-hub.apk) собирается автоматически при каждом пуше в `main`.
 
 ### Собрать локально
 
