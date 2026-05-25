@@ -70,7 +70,7 @@
 - Добавлен шаг патча метки приложения → `EventHub`
 - APK подписывается keystore из GitHub Secret `KEYSTORE_BASE64`
 - Каждая сборка создаёт GitHub Release с тегом `v1.0.{run_number}`
-- Стабильный URL: `.../releases/latest/download/app-release.apk`
+- Стабильный URL: `.../releases/latest/download/event-hub.apk`
 
 **Android**
 - `android/app/build.gradle` с signing config через `key.properties` (Groovy DSL)

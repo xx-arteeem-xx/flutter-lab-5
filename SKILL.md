@@ -94,7 +94,7 @@ ThemeNotifier (ValueNotifier<ThemeMode>)
 - Trigger: push to `main`
 - Steps: checkout → JDK17 → Flutter stable → `flutter create . --platforms android --project-name flutter_lab_5` → delete `build.gradle.kts` → patch label to `EventHub` → gradlew chmod → keystore decode → key.properties → pub get → `dart run flutter_launcher_icons` → analyze → test → build apk → GitHub Release
 - Secrets: `KEYSTORE_BASE64`, `KEY_STORE_PASSWORD`, `KEY_PASSWORD`, `KEY_ALIAS`
-- Stable URL: `releases/latest/download/app-release.apk`
+- Stable URL: `releases/latest/download/event-hub.apk`
 
 ## Categories
 
